@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dch550kydmomb"]
+
+[ext_resource type="Shader" path="res://materials/shader_4.gdshader" id="1_noomq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s8ptn"]
+shader = ExtResource("1_noomq")
+shader_parameter/Stripes = 5.0
+
+[node name="Example" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/AspectRatioContainer"]
+material = SubResource("ShaderMaterial_s8ptn")
+layout_mode = 2

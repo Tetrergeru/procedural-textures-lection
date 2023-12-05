@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwg8c44e8spg2"]
+
+[ext_resource type="Shader" path="res://materials/shader_8.gdshader" id="1_rovtu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oox5x"]
+shader = ExtResource("1_rovtu")
+shader_parameter/Scale = 5.0
+shader_parameter/Border = 0.6
+shader_parameter/Angle = 132.632
+
+[node name="Example" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/AspectRatioContainer"]
+material = SubResource("ShaderMaterial_oox5x")
+layout_mode = 2

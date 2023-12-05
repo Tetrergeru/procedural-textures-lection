@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://chrxi5kevw05u"]
+
+[ext_resource type="Shader" path="res://materials/shader_5.gdshader" id="1_olbtx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oox5x"]
+shader = ExtResource("1_olbtx")
+shader_parameter/Stripes = 5.0
+shader_parameter/Color1 = Color(1, 1, 1, 1)
+shader_parameter/Color2 = Color(0.341176, 0, 0, 1)
+
+[node name="Example" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/AspectRatioContainer"]
+material = SubResource("ShaderMaterial_oox5x")
+layout_mode = 2

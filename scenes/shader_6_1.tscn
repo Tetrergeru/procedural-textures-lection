@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdg1yubho2wv1"]
+
+[ext_resource type="Shader" path="res://materials/shader_6_1.gdshader" id="1_34m03"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oox5x"]
+shader = ExtResource("1_34m03")
+shader_parameter/Scale = 5.0
+
+[node name="Example" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/AspectRatioContainer"]
+material = SubResource("ShaderMaterial_oox5x")
+layout_mode = 2
