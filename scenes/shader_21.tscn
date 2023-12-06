@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmwqqnfxsy7cs"]
+
+[ext_resource type="Shader" path="res://materials/shader_21.gdshader" id="1_lebbu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_db7w0"]
+shader = ExtResource("1_lebbu")
+shader_parameter/Scale = 5.0
+shader_parameter/Stripes = 6.0
+shader_parameter/Color1 = Color(0.00784314, 0.294118, 0.592157, 1)
+shader_parameter/Color2 = Color(0.67451, 0.764706, 0.87451, 1)
+
+[node name="Example" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/AspectRatioContainer"]
+material = SubResource("ShaderMaterial_db7w0")
+layout_mode = 2

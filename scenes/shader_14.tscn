@@ -1,12 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://chrxi5kevw05u"]
+[gd_scene load_steps=3 format=3 uid="uid://dvqwxi08s7x5d"]
 
-[ext_resource type="Shader" path="res://materials/shader_5_1.gdshader" id="1_vcsdw"]
+[ext_resource type="Shader" path="res://materials/shader_14.gdshader" id="1_1wssb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oox5x"]
-shader = ExtResource("1_vcsdw")
+shader = ExtResource("1_1wssb")
 shader_parameter/Stripes = 5.0
-shader_parameter/Color1 = Color(1, 1, 1, 1)
-shader_parameter/Color2 = Color(0.341176, 0, 0, 1)
+shader_parameter/Color1 = Color(1, 0, 0, 1)
+shader_parameter/Color2 = Color(0, 0, 1, 1)
 
 [node name="Example" type="Node2D"]
 

@@ -9,10 +9,10 @@ float simple_noise_2(vec2 pos) {
     float p10 = u_random(hash_2(inxt.x, ipos.y));
     float p11 = u_random(hash_2(inxt.x, inxt.y));
 
-    float p0 = smooth_step(p00, p10, pos.x - float(ipos.x));
-    float p1 = smooth_step(p01, p11, pos.x - float(ipos.x));
+    float p0 = mix(p00, p10, pos.x - float(ipos.x));
+    float p1 = mix(p01, p11, pos.x - float(ipos.x));
 	
-	float p = smooth_step(p0, p1, pos.y - float(ipos.y));
+	float p = mix(p0, p1, pos.y - float(ipos.y));
 
     return p;
 }
@@ -54,7 +54,7 @@ float simple_fractal_2(vec2 pos, int iters) {
 		scale *= 2.0;
 	}
 	
-	return smoothstep(0, 1, res / sum);
+	return clamp(res / sum, 0, 1);
 }
 
 float simple_fractal_3(vec3 pos, int iters) {

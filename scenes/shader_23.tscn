@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7pkimxi2piu6"]
+
+[ext_resource type="Shader" path="res://materials/shader_23.gdshader" id="1_dec7y"]
+
+[sub_resource type="Environment" id="Environment_ab38u"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_wuyej"]
+size = Vector2(2, 2)
+subdivide_width = 50
+subdivide_depth = 50
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2smm3"]
+render_priority = 0
+shader = ExtResource("1_dec7y")
+shader_parameter/Scale = 2.0
+shader_parameter/Roughness = 1.0
+shader_parameter/Color1 = Color(0.219608, 0.270588, 0.392157, 1)
+shader_parameter/Color2 = Color(0.705882, 0.490196, 0.266667, 1)
+
+[node name="Shader22" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ab38u")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("QuadMesh_wuyej")
+material = SubResource("ShaderMaterial_2smm3")

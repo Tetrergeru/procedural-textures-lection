@@ -81,7 +81,7 @@ float perlin_fractal_2(vec2 pos, int iters) {
 		scale *= 2.0;
 	}
 	
-	return smooth_step(0, 1, res / sum);
+	return res / sum;
 }
 
 float perlin_fractal_3(vec3 pos, int iters) {
@@ -114,11 +114,11 @@ vec3 debug_perlin_gradient_2(vec2 pos, float border) {
 			return vec3(1.0, 0.0, 0.0);
 		}
 		
-		if (length(l_pos) < 0.25) {
-			return vec3(dot(perlin_gradient_2(ip), pos - vec2(ip))) * 0.5 + 0.5;
-		}
+		//if (length(l_pos) < 0.25) {
+			//return vec3(dot(perlin_gradient_2(ip), pos - vec2(ip))) * 0.5 + 0.5;
+		//}
 	}
 	
-	float g = perlin_noise_3(vec3(pos, 0.0)) * 0.5 + 0.5;
+	float g = perlin_noise_2(pos);
 	return vec3(g);
 }

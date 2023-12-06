@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://br46m8ameicig"]
+
+[ext_resource type="Shader" path="res://materials/shader_24.gdshader" id="1_ugppi"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_db7w0"]
+shader = ExtResource("1_ugppi")
+shader_parameter/Scale = 10.0
+shader_parameter/RotationStrength = 0.371
+shader_parameter/Color1 = Color(0.290196, 0.145098, 0.00392157, 1)
+shader_parameter/Color2 = Color(0.788235, 0.760784, 0.6, 1)
+
+[node name="Example" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/AspectRatioContainer"]
+material = SubResource("ShaderMaterial_db7w0")
+layout_mode = 2

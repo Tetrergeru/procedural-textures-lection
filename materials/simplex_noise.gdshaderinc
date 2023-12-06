@@ -176,5 +176,7 @@ vec3 debug_simplex_gradient_2(vec2 pos, float border) {
 		}
 	}
 	
-	return vec3(simplex_noise_2(pos));
+	//float c = u_random(hash_3(i_skew_pos.x, i_skew_pos.y, simplex_ps[1].x));
+	float c = simplex_noise_2(pos);
+	return vec3(c);
 }
